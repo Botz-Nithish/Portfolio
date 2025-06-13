@@ -1,0 +1,30 @@
+/* body {
+  cursor: none;
+} */
+.glitch-mask {
+  background: white;
+  color: black;
+  mask-image: linear-gradient(white, white);
+  -webkit-mask-image: linear-gradient(white, white);
+  mask-composite: intersect;
+  -webkit-mask-composite: destination-in;
+  mix-blend-mode: screen;
+  background-color: white;
+}
+
+.scrambled-text-demo span {
+  display: inline-block !important;
+  white-space: pre;
+}
+
+.inline-block {
+  display: inline-block;
+  white-space: pre;
+}
+
+.scramble-char {
+  display: inline;
+  will-change: transform;
+  white-space: normal;
+  word-break: break-word;
+}
