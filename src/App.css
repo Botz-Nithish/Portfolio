@@ -28,3 +28,9 @@
   white-space: normal;
   word-break: break-word;
 }
+
+.outlined-text {
+  color: transparent;
+  -webkit-text-stroke: 1px cyan; /* For Chrome/Safari */
+  text-stroke: 1px cyan;         /* For Firefox (limited support) */
+}

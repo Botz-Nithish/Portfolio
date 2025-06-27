@@ -288,7 +288,7 @@ const GooeyNav = ({
       </style>
       <div className="relative" ref={containerRef}>
         <nav
-          className="flex relative border-2 rounded-2xl border-dashed rounded-xl border-cyan-950 bg-black"
+          className="flex relative border-2 rounded-2xl border-dashed rounded-xl border-cyan-950 bg-black/50"
           style={{ transform: "translate3d(0,0,0.01px)" }}
         >
           <ul

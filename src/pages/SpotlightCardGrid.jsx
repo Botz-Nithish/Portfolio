@@ -10,7 +10,7 @@ import {
   FaCogs
 } from "react-icons/fa";
 import SpotlightCard from "../components/SpotlightCard"; // make sure the path is correct
-
+import ScrambledText from "../components/ScrambledText";
 const skillsData = [
   {
     title: "Full-Stack Web Development",
@@ -74,8 +74,24 @@ export default function SpotlightSkillGrid() {
           <div className="text-5xl" style={{ color: skill.color.replace("0.2", "1") }}>
             {skill.icon}
           </div>
-          <div className="text-lg font-medium">{skill.title}</div>
-          <div className="text-sm text-gray-300">{skill.description}</div>
+          <ScrambledText
+            className="scrambled-text-demo text-center text-xl "
+            radius={100}
+            duration={1.2}
+            speed={0.5}
+            scrambleChars={"."}
+          >
+            {skill.title}
+          </ScrambledText>
+          <ScrambledText
+            className="scrambled-text-demo text-center "
+            radius={100}
+            duration={1.2}
+            speed={0.5}
+            scrambleChars={"."}
+          >
+            {skill.description}
+          </ScrambledText>
         </SpotlightCard>
       ))}
     </div>

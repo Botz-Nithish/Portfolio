@@ -59,17 +59,17 @@ export const ScrollVelocity = ({
       ? { container: scrollContainerRef }
       : {};
     const { scrollY } = useScroll(scrollOptions);
-    const scrollVelocity = useVelocity(scrollY);
-    const smoothVelocity = useSpring(scrollVelocity, {
-      damping: damping ?? 50,
-      stiffness: stiffness ?? 400,
-    });
-    const velocityFactor = useTransform(
-      smoothVelocity,
-      velocityMapping?.input || [0, 1000],
-      velocityMapping?.output || [0, 5],
-      { clamp: false }
-    );
+    // const scrollVelocity = useVelocity(scrollY);
+    // const smoothVelocity = useSpring(scrollVelocity, {
+    //   damping: damping ?? 50,
+    //   stiffness: stiffness ?? 400,
+    // });
+    // const velocityFactor = useTransform(
+    //   smoothVelocity,
+    //   velocityMapping?.input || [0, 1000],
+    //   velocityMapping?.output || [0, 5],
+    //   { clamp: false }
+    // );
 
     const copyRef = useRef(null);
     const copyWidth = useElementWidth(copyRef);
@@ -89,13 +89,13 @@ export const ScrollVelocity = ({
     useAnimationFrame((t, delta) => {
       let moveBy = directionFactor.current * baseVelocity * (delta / 1000);
 
-      if (velocityFactor.get() < 0) {
-        directionFactor.current = -1;
-      } else if (velocityFactor.get() > 0) {
-        directionFactor.current = 1;
-      }
+      // if (velocityFactor.get() < 0) {
+      //   directionFactor.current = -1;
+      // } else if (velocityFactor.get() > 0) {
+      //   directionFactor.current = 1;
+      // }
 
-      moveBy += directionFactor.current * moveBy * velocityFactor.get();
+      // moveBy += directionFactor.current * moveBy * velocityFactor.get();
       baseX.set(baseX.get() + moveBy);
     });
 
